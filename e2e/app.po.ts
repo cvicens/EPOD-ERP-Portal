@@ -1,6 +1,6 @@
 import { browser, element, by } from 'protractor';
 
-export class EPODERPPortalPage {
+export class EPODEPODERPPortalPage {
   navigateTo() {
     return browser.get('/');
   }

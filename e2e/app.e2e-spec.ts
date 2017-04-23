@@ -1,10 +1,10 @@
-import { EPODERPPortalPage } from './app.po';
+import { EPODEPODERPPortalPage } from './app.po';
 
-describe('epod-erp-portal App', () => {
-  let page: EPODERPPortalPage;
+describe('epod-epod-erp-portal App', () => {
+  let page: EPODEPODERPPortalPage;
 
   beforeEach(() => {
-    page = new EPODERPPortalPage();
+    page = new EPODEPODERPPortalPage();
   });
 
   it('should display message saying app works', () => {

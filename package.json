@@ -1,5 +1,5 @@
 {
-  "name": "epod-erp-portal",
+  "name": "epod-epod-erp-portal",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
@@ -8,15 +8,10 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
-    "install": ""
+    "e2e": "ng e2e"
   },
-  "main": "application.js",
   "private": true,
   "dependencies": {
-    "corser": "1.2.0",
-    "express": "3.3.4",
-    "fh-js-sdk": "^2.18.1",
     "@angular/common": "^4.0.0",
     "@angular/compiler": "^4.0.0",
     "@angular/core": "^4.0.0",
