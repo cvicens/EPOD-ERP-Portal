@@ -11,6 +11,7 @@
     "e2e": "ng e2e",
     "install": ""
   },
+  "main": "application.js",
   "private": true,
   "dependencies": {
     "corser": "1.2.0",
