@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Order } from '../model/order';
 import { FormOrder } from '../model/form-order';
+import { Assignee } from '../model/assignee';
 
 import { FHService } from '../service/fh.service';
 
@@ -21,12 +22,13 @@ export class CreateOrderComponent implements OnInit {
   ngOnInit() {
   }
 
-  assignees = [{id: 'rJeXyfdrH', name: 'Daisy'}, {id: 'rkX1fdSH', name: 'Trever'}];
+  assignees = [new Assignee('rJeXyfdrH', 'Daisy'), new Assignee('rkX1fdSH', 'Trever')];
 
   title = 'EPOD TEST';
-  assignee = null;
+  assigneeId = this.assignees[0].id;
 
-  model = new FormOrder ('12', this.title, this.assignee);
+  //model = new FormOrder ('12', this.title, this.assignees[0]);
+  model = new FormOrder ('12', this.title, null);
     
   message = 'No messages so far';
   pushedOrderId = null;
@@ -39,7 +41,7 @@ export class CreateOrderComponent implements OnInit {
     let generatedId = Order.makeid(9);
     let generatedCorrelationId = Order.makeid(9);
 
-    let order = Order.generateOrder(generatedId, generatedCorrelationId, this.model.title, this.model.assignee.id);
+    let order = Order.generateOrder(generatedId, generatedCorrelationId, this.model.title, this.model.assignee.id );
 
     console.log('New order submitted!', JSON.stringify(order));
 

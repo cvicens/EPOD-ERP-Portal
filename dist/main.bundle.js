@@ -1,6 +1,6 @@
 webpackJsonp([1,4],{
 
-/***/ 150:
+/***/ 151:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(27)();
@@ -18,7 +18,7 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ 151:
+/***/ 152:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(27)();
@@ -36,21 +36,21 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ 154:
+/***/ 155:
 /***/ (function(module, exports) {
 
 module.exports = "<div class=\"container\">\n<div class=\"page-header\">\n  <h1>{{title}}</h1>\n</div>\n</div>\n\n<app-create-order></app-create-order>\n"
 
 /***/ }),
 
-/***/ 155:
+/***/ 156:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n    <h2>New Order Form</h2>\n    <form (ngSubmit)=\"onSubmit()\"  #orderForm=\"ngForm\"> \n\n      <div class=\"form-group\">\n        <label for=\"name\">Title</label>\n        <input type=\"text\" class=\"form-control\" id=\"title\" required [(ngModel)]=\"model.title\" name=\"title\" #title=\"ngModel\">\n        <div [hidden]=\"title.valid || title.pristine\"\n             class=\"alert alert-danger\">\n          Title is required\n        </div>\n      </div>\n\n      <div class=\"form-group\">\n        <label for=\"assignee\">Assignee</label>\n        <select class=\"form-control\" id=\"assignee\" required [(ngModel)]=\"model.assignee\" name=\"assignee\" #assignee=\"ngModel\">\n          <option *ngFor=\"let assignee of assignees\" [value]=\"assignee.id\">{{assignee.name}}</option>\n        </select>\n        <div [hidden]=\"assignee.valid || assignee.pristine\" class=\"alert alert-danger\">\n          Assignee is required\n        </div>\n      </div>\n\n      <button type=\"submit\" class=\"btn btn-success\">Submit</button>\n\n      <hr /> \n\n      <div class=\"alert alert-info\" role=\"alert\">\n        <span class=\"glyphicon glyphicon-exclamation-sign\" aria-hidden=\"true\"></span>\n        <span class=\"sr-only\">Message:</span>\n        {{message}}\n      </div>\n    </form>\n    \n</div>\n"
+module.exports = "<div class=\"container\">\n    <h3>New Order Form</h3>\n    <form (ngSubmit)=\"onSubmit()\"  #orderForm=\"ngForm\"> \n\n      <div class=\"form-group\">\n        <label for=\"name\">Title</label>\n        <input type=\"text\" class=\"form-control\" id=\"title\" required [(ngModel)]=\"model.title\" name=\"title\" #title=\"ngModel\">\n        <div [hidden]=\"title.valid || title.pristine\"\n             class=\"alert alert-danger\">\n          Title is required\n        </div>\n      </div>\n\n      <div class=\"form-group\">\n        <label for=\"assignee\">Assignee</label>\n        <select class=\"form-control\" id=\"assignee\" required \n                [(ngModel)]=\"model.assignee\" name=\"assignee\" #assignee=\"ngModel\">\n          <option *ngFor=\"let assignee of assignees\" [ngValue]=\"assignee\">{{assignee.name}}</option>\n        </select>\n        <div [hidden]=\"assignee.valid || assignee.pristine\" class=\"alert alert-danger\">\n          Assignee is required\n        </div>\n      </div>\n\n      <button type=\"submit\" class=\"btn btn-success\" [disabled]=\"!orderForm.form.valid\">Submit</button>\n\n      <hr /> \n\n      <div class=\"alert alert-info\" role=\"alert\">\n        <span class=\"glyphicon glyphicon-exclamation-sign\" aria-hidden=\"true\"></span>\n        <span class=\"sr-only\">Message:</span>\n        {{message}}\n      </div>\n    </form>\n    \n</div>\n"
 
 /***/ }),
 
-/***/ 186:
+/***/ 187:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(83);
@@ -63,7 +63,7 @@ module.exports = __webpack_require__(83);
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_fh_js_sdk__ = __webpack_require__(152);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_fh_js_sdk__ = __webpack_require__(153);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_fh_js_sdk___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_fh_js_sdk__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FHService; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -149,7 +149,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__(89);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_app_module__ = __webpack_require__(92);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__(96);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__(97);
 
 
 
@@ -184,8 +184,8 @@ var AppComponent = (function () {
 AppComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
         selector: 'app-root',
-        template: __webpack_require__(154),
-        styles: [__webpack_require__(150)]
+        template: __webpack_require__(155),
+        styles: [__webpack_require__(151)]
     })
 ], AppComponent);
 
@@ -256,9 +256,10 @@ AppModule = __decorate([
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__model_order__ = __webpack_require__(95);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__model_form_order__ = __webpack_require__(94);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__service_fh_service__ = __webpack_require__(57);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__model_order__ = __webpack_require__(96);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__model_form_order__ = __webpack_require__(95);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__model_assignee__ = __webpack_require__(94);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__service_fh_service__ = __webpack_require__(57);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CreateOrderComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -273,16 +274,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
 var CreateOrderComponent = (function () {
     function CreateOrderComponent(fhService) {
         this.fhService = fhService;
-        this.assignees = [{ id: 'rJeXyfdrH', name: 'Daisy' }, { id: 'rkX1fdSH', name: 'Trever' }];
+        this.assignees = [new __WEBPACK_IMPORTED_MODULE_3__model_assignee__["a" /* Assignee */]('rJeXyfdrH', 'Daisy'), new __WEBPACK_IMPORTED_MODULE_3__model_assignee__["a" /* Assignee */]('rkX1fdSH', 'Trever')];
         this.title = 'EPOD TEST';
-        this.assignee = null;
-        this.model = new __WEBPACK_IMPORTED_MODULE_2__model_form_order__["a" /* FormOrder */]('12', this.title, this.assignee);
+        this.assigneeId = this.assignees[0].id;
+        //model = new FormOrder ('12', this.title, this.assignees[0]);
+        this.model = new __WEBPACK_IMPORTED_MODULE_2__model_form_order__["a" /* FormOrder */]('12', this.title, null);
         this.message = 'No messages so far';
         this.pushedOrderId = null;
         this.submitted = false;
@@ -318,10 +321,10 @@ var CreateOrderComponent = (function () {
 CreateOrderComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
         selector: 'app-create-order',
-        template: __webpack_require__(155),
-        styles: [__webpack_require__(151)]
+        template: __webpack_require__(156),
+        styles: [__webpack_require__(152)]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3__service_fh_service__["a" /* FHService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__service_fh_service__["a" /* FHService */]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_4__service_fh_service__["a" /* FHService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__service_fh_service__["a" /* FHService */]) === "function" && _a || Object])
 ], CreateOrderComponent);
 
 var _a;
@@ -330,6 +333,23 @@ var _a;
 /***/ }),
 
 /***/ 94:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Assignee; });
+var Assignee = (function () {
+    function Assignee(id, name) {
+        this.id = id;
+        this.name = name;
+    }
+    return Assignee;
+}());
+
+//# sourceMappingURL=assignee.js.map
+
+/***/ }),
+
+/***/ 95:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -347,7 +367,7 @@ var FormOrder = (function () {
 
 /***/ }),
 
-/***/ 95:
+/***/ 96:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -456,7 +476,7 @@ var Order = (function () {
 
 /***/ }),
 
-/***/ 96:
+/***/ 97:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -473,5 +493,5 @@ var environment = {
 
 /***/ })
 
-},[186]);
+},[187]);
 //# sourceMappingURL=main.bundle.js.map

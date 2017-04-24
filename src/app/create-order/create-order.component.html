@@ -1,5 +1,5 @@
 <div class="container">
-    <h2>New Order Form</h2>
+    <h3>New Order Form</h3>
     <form (ngSubmit)="onSubmit()"  #orderForm="ngForm"> 
 
       <div class="form-group">
@@ -13,15 +13,16 @@
 
       <div class="form-group">
         <label for="assignee">Assignee</label>
-        <select class="form-control" id="assignee" required [(ngModel)]="model.assignee" name="assignee" #assignee="ngModel">
-          <option *ngFor="let assignee of assignees" [value]="assignee.id">{{assignee.name}}</option>
+        <select class="form-control" id="assignee" required 
+                [(ngModel)]="model.assignee" name="assignee" #assignee="ngModel">
+          <option *ngFor="let assignee of assignees" [ngValue]="assignee">{{assignee.name}}</option>
         </select>
         <div [hidden]="assignee.valid || assignee.pristine" class="alert alert-danger">
           Assignee is required
         </div>
       </div>
 
-      <button type="submit" class="btn btn-success">Submit</button>
+      <button type="submit" class="btn btn-success" [disabled]="!orderForm.form.valid">Submit</button>
 
       <hr /> 
 
