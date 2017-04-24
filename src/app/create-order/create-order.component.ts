@@ -21,10 +21,10 @@ export class CreateOrderComponent implements OnInit {
   ngOnInit() {
   }
 
-  assignees = ['rJeXyfdrH', 'rkX1fdSH'];
+  assignees = [{id: 'rJeXyfdrH', name: 'Daisy'}, {id: 'rkX1fdSH', name: 'Trever'}];
 
   title = 'EPOD TEST';
-  assignee = this.assignees[0];
+  assignee = null;
 
   model = new FormOrder ('12', this.title, this.assignee);
     
@@ -39,7 +39,7 @@ export class CreateOrderComponent implements OnInit {
     let generatedId = Order.makeid(9);
     let generatedCorrelationId = Order.makeid(9);
 
-    let order = Order.generateOrder(generatedId, generatedCorrelationId, this.model.title, this.model.assignee);
+    let order = Order.generateOrder(generatedId, generatedCorrelationId, this.model.title, this.model.assignee.id);
 
     console.log('New order submitted!', JSON.stringify(order));
 

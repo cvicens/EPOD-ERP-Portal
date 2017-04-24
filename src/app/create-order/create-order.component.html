@@ -12,9 +12,9 @@
       </div>
 
       <div class="form-group">
-        <label for="power">Assignee</label>
+        <label for="assignee">Assignee</label>
         <select class="form-control" id="assignee" required [(ngModel)]="model.assignee" name="assignee" #assignee="ngModel">
-          <option *ngFor="let assignee of assignees" [value]="assignee">{{assignee}}</option>
+          <option *ngFor="let assignee of assignees" [value]="assignee.id">{{assignee.name}}</option>
         </select>
         <div [hidden]="assignee.valid || assignee.pristine" class="alert alert-danger">
           Assignee is required
