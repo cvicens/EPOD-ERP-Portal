@@ -46,7 +46,7 @@ module.exports = "<div class=\"container\">\n<div class=\"page-header\">\n  <h1>
 /***/ 155:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n    <h2>New Order Form</h2>\n    <form (ngSubmit)=\"onSubmit()\"  #orderForm=\"ngForm\"> \n\n      <div class=\"form-group\">\n        <label for=\"name\">Title</label>\n        <input type=\"text\" class=\"form-control\" id=\"title\" required [(ngModel)]=\"model.title\" name=\"title\" #title=\"ngModel\">\n        <div [hidden]=\"title.valid || title.pristine\"\n             class=\"alert alert-danger\">\n          Title is required\n        </div>\n      </div>\n\n      <div class=\"form-group\">\n        <label for=\"power\">Assignee</label>\n        <select class=\"form-control\" id=\"assignee\" required [(ngModel)]=\"model.assignee\" name=\"assignee\" #assignee=\"ngModel\">\n          <option *ngFor=\"let assignee of assignees\" [value]=\"assignee\">{{assignee}}</option>\n        </select>\n        <div [hidden]=\"assignee.valid || assignee.pristine\" class=\"alert alert-danger\">\n          Assignee is required\n        </div>\n      </div>\n\n      <button type=\"submit\" class=\"btn btn-success\">Submit</button>\n\n      <hr /> \n\n      <div class=\"alert alert-info\" role=\"alert\">\n        <span class=\"glyphicon glyphicon-exclamation-sign\" aria-hidden=\"true\"></span>\n        <span class=\"sr-only\">Message:</span>\n        {{message}}\n      </div>\n    </form>\n    \n</div>\n"
+module.exports = "<div class=\"container\">\n    <h2>New Order Form</h2>\n    <form (ngSubmit)=\"onSubmit()\"  #orderForm=\"ngForm\"> \n\n      <div class=\"form-group\">\n        <label for=\"name\">Title</label>\n        <input type=\"text\" class=\"form-control\" id=\"title\" required [(ngModel)]=\"model.title\" name=\"title\" #title=\"ngModel\">\n        <div [hidden]=\"title.valid || title.pristine\"\n             class=\"alert alert-danger\">\n          Title is required\n        </div>\n      </div>\n\n      <div class=\"form-group\">\n        <label for=\"assignee\">Assignee</label>\n        <select class=\"form-control\" id=\"assignee\" required [(ngModel)]=\"model.assignee\" name=\"assignee\" #assignee=\"ngModel\">\n          <option *ngFor=\"let assignee of assignees\" [value]=\"assignee.id\">{{assignee.name}}</option>\n        </select>\n        <div [hidden]=\"assignee.valid || assignee.pristine\" class=\"alert alert-danger\">\n          Assignee is required\n        </div>\n      </div>\n\n      <button type=\"submit\" class=\"btn btn-success\">Submit</button>\n\n      <hr /> \n\n      <div class=\"alert alert-info\" role=\"alert\">\n        <span class=\"glyphicon glyphicon-exclamation-sign\" aria-hidden=\"true\"></span>\n        <span class=\"sr-only\">Message:</span>\n        {{message}}\n      </div>\n    </form>\n    \n</div>\n"
 
 /***/ }),
 
@@ -279,9 +279,9 @@ function capitalizeFirstLetter(string) {
 var CreateOrderComponent = (function () {
     function CreateOrderComponent(fhService) {
         this.fhService = fhService;
-        this.assignees = ['rJeXyfdrH', 'rkX1fdSH'];
+        this.assignees = [{ id: 'rJeXyfdrH', name: 'Daisy' }, { id: 'rkX1fdSH', name: 'Trever' }];
         this.title = 'EPOD TEST';
-        this.assignee = this.assignees[0];
+        this.assignee = null;
         this.model = new __WEBPACK_IMPORTED_MODULE_2__model_form_order__["a" /* FormOrder */]('12', this.title, this.assignee);
         this.message = 'No messages so far';
         this.pushedOrderId = null;
@@ -294,7 +294,7 @@ var CreateOrderComponent = (function () {
         this.submitted = true;
         var generatedId = __WEBPACK_IMPORTED_MODULE_1__model_order__["a" /* Order */].makeid(9);
         var generatedCorrelationId = __WEBPACK_IMPORTED_MODULE_1__model_order__["a" /* Order */].makeid(9);
-        var order = __WEBPACK_IMPORTED_MODULE_1__model_order__["a" /* Order */].generateOrder(generatedId, generatedCorrelationId, this.model.title, this.model.assignee);
+        var order = __WEBPACK_IMPORTED_MODULE_1__model_order__["a" /* Order */].generateOrder(generatedId, generatedCorrelationId, this.model.title, this.model.assignee.id);
         console.log('New order submitted!', JSON.stringify(order));
         this.fhService.postOrder('workorders', 'POST', order)
             .then(function (result) {
